@@ -1,0 +1,17 @@
+{
+  "name": "q-learning",
+  "version": "1.0.0",
+  "description": "Machine Learning task about Q-Learning",
+  "main": "index.js",
+  "repository": "git@github.com:helmisatria/q-learning.git",
+  "author": "Helmi Satria",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.11.0"
+  },
+  "dependencies": {
+    "jsonfile": "^4.0.0"
+  }
+}
