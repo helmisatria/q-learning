@@ -1,7 +1,7 @@
 const jsonfile = require('jsonfile');
 
 const file = './trial/conditionMovement.json';
-const fileWrite = './trial/rewards.json';
+const fileWrite = './trial/valueMovement.json';
 
 const rewards = [
   [-5, -3, -1, 100],
@@ -32,17 +32,17 @@ condition.forEach((reward, i) => {
     count,
   });
 
-  let UP = 0;
-  let DOWN = 0;
-  if (I === 0) {
-    UP = reward[0] * rewards[I - 1][0];
+  let UP = null;
+  let DOWN = null;
+  if (I !== 0) {
+    UP = reward[0] * rewards[I - 1][count];
   }
-  if (I === 3) {
-    DOWN = reward[2] * rewards[I + 1][2];
+  if (I !== 3) {
+    DOWN = reward[2] * rewards[I + 1][count];
   }
 
-  const RIGHT = reward[1] * rewards[I][1];
-  const LEFT = reward[3] * rewards[I][3];
+  const RIGHT = reward[1] * rewards[I][count + 1];
+  const LEFT = reward[3] * rewards[I][count - 1];
 
   count += 1;
 
