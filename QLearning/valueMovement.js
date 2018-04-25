@@ -1,8 +1,8 @@
 const jsonfile = require('jsonfile');
 
 let REWARDS;
-if (process.env.STATUS === 'TEST') REWARDS = require('./JSON/REWARD_TEST.json');
-if (process.env.STATUS === 'TRIAL') REWARDS = require('./JSON/rewards.json');
+if (process.env.STATUS === 'TEST') REWARDS = require('./REWARDS/REWARD_TEST.json');
+if (process.env.STATUS === 'TRIAL') REWARDS = require('./JSON/REWARD_TRIAL.json');
 
 const file = './QLearning/JSON/conditionMovement.json';
 const fileWrite = './QLearning/JSON/valueMovement.json';

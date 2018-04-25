@@ -43,6 +43,16 @@
         "STATUS": "TEST"
       },
       "cwd": "${workspaceFolder}"
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Highest Q Value",
+      "program": "${workspaceFolder}/QLearning/highestQValue.js",
+      "env": {
+        "STATUS": "TEST"
+      },
+      "cwd": "${workspaceFolder}"
     }
   ],
   "compounds": [
@@ -52,7 +62,8 @@
         "Condition Movement",
         "Value Movement",
         "Possible Movement",
-        "Q-Learning"
+        "Q-Learning",
+        "Highest Q Value"
       ]
     }
   ]

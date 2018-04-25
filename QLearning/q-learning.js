@@ -6,21 +6,20 @@ const jsonfile = require('jsonfile');
 const POSSIBLE_MOVEMENT = require('./JSON/possibleMovement.json');
 
 let REWARDS;
-if (process.env.STATUS === 'TEST') REWARDS = require('./JSON/REWARD_TEST.json');
-if (process.env.STATUS === 'TRIAL') REWARDS = require('./JSON/rewards.json');
+if (process.env.STATUS === 'TEST') REWARDS = require('./REWARDS/REWARD_TEST.json');
+if (process.env.STATUS === 'TRIAL') REWARDS = require('./REWARDS/REWARD_TRIAL.json');
 
 const VALUE_MOVEMENT = require('./JSON/valueMovement.json');
 
-const GAMMA = 0.8;
+const GAMMA = 1;
 const Q = Create2DArray(REWARDS.length * REWARDS[0].length, 4);
 
 const GOALSTATE = 9;
-const EPISODE_LENGTH = 1000;
+const EPISODE_LENGTH = 100;
 const LOG = [];
 
 for (let episode = 0; episode < EPISODE_LENGTH; episode += 1) {
   let state = randomBetween(0, VALUE_MOVEMENT.length);
-  // let state = 13;
 
   while (state !== GOALSTATE) {
     // actionIndex --> 0 = UP - 1 = RIGHT - 2 = DOWN - 3 = LEFT

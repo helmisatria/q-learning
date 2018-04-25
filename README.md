@@ -56,4 +56,4 @@ You can find the results on JSON folder
 You can find the rewards 2 Dimension array on REWARDS folder
 
 1.  Reward TEST 2D Array file, located on: QLearning/REWARDS/**REWARD_TEST.json**
-2.  Reward TRIAL 2D Array file, located on: QLearning/REWARDS/**REWARD_TRIAL.json**
+2.  Reward TRIAL 2D Array file, located on: QLearning/REWARDS/**REWARD_TRIAL.json.json**
