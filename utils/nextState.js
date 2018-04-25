@@ -33,16 +33,16 @@ const nextState = (REWARDS, currentState, actionIndex) => {
   let next_state = realState;
   for (let i = row_next; i !== 0; i -= 1) {
     next_state += REWARDS[0].length;
-    console.log(i);
+    // console.log(i);
   }
 
   next_state += colPlusMinus;
 
-  console.log('====================================');
-  console.log({
-    realState, row, next_state,
-  });
-  console.log('====================================');
+  // console.log('====================================');
+  // console.log({
+  //   realState, row, next_state,
+  // });
+  // console.log('====================================');
 
   return { next_state_val, next_state };
 };

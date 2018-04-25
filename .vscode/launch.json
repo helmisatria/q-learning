@@ -1,0 +1,59 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Condition Movement",
+      "program": "${workspaceFolder}/QLearning/conditionMovement.js",
+      "env": {
+        "STATUS": "TEST"
+      },
+      "cwd": "${workspaceFolder}"
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Value Movement",
+      "program": "${workspaceFolder}/QLearning/valueMovement.js",
+      "env": {
+        "STATUS": "TEST"
+      },
+      "cwd": "${workspaceFolder}"
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Possible Movement",
+      "program": "${workspaceFolder}/QLearning/possibleMovement.js",
+      "env": {
+        "STATUS": "TEST"
+      },
+      "cwd": "${workspaceFolder}"
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Q-Learning",
+      "program": "${workspaceFolder}/QLearning/q-learning.js",
+      "env": {
+        "STATUS": "TEST"
+      },
+      "cwd": "${workspaceFolder}"
+    }
+  ],
+  "compounds": [
+    {
+      "name": "Q-Learning TEST",
+      "configurations": [
+        "Condition Movement",
+        "Value Movement",
+        "Possible Movement",
+        "Q-Learning"
+      ]
+    }
+  ]
+}

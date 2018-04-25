@@ -1,26 +1,31 @@
 const Create2DArray = require('../utils/Create2DArray');
 const nextState = require('../utils/nextState');
 const randomBetween = require('../utils/randomBetween');
+const jsonfile = require('jsonfile');
 
-const POSSIBLE_MOVEMENT = require('./possibleMovement.json');
-const REWARDS = require('./rewards.json');
-const VALUE_MOVEMENT = require('./valueMovement.json');
+const POSSIBLE_MOVEMENT = require('./JSON/possibleMovement.json');
+
+let REWARDS;
+if (process.env.STATUS === 'TEST') REWARDS = require('./JSON/REWARD_TEST.json');
+if (process.env.STATUS === 'TRIAL') REWARDS = require('./JSON/rewards.json');
+
+const VALUE_MOVEMENT = require('./JSON/valueMovement.json');
 
 const GAMMA = 0.8;
-const Q = Create2DArray(16, 4);
+const Q = Create2DArray(REWARDS.length * REWARDS[0].length, 4);
 
-const EPISODE_LENGTH = 1;
-
-// const __log__state = [];
+const GOALSTATE = 9;
+const EPISODE_LENGTH = 1000;
+const LOG = [];
 
 for (let episode = 0; episode < EPISODE_LENGTH; episode += 1) {
-  // const state = randomBetween(0, VALUE_MOVEMENT.length);
-  let state = 13;
+  let state = randomBetween(0, VALUE_MOVEMENT.length);
+  // let state = 13;
 
-  while (state !== VALUE_MOVEMENT.length - 1) {
+  while (state !== GOALSTATE) {
     // actionIndex --> 0 = UP - 1 = RIGHT - 2 = DOWN - 3 = LEFT
-    // actionVal --> Value of the Action
-    // const { actionIndex, actionVal } = chooseOneNotNull(VALUE_MOVEMENT[state]);
+    // actionValue --> Value of the Action
+
     const random = randomBetween(0, POSSIBLE_MOVEMENT[state].length);
     const actionIndex = POSSIBLE_MOVEMENT[state][random];
     const actionValue = VALUE_MOVEMENT[state][actionIndex];
@@ -34,9 +39,14 @@ for (let episode = 0; episode < EPISODE_LENGTH; episode += 1) {
 
     const QValue = actionValue + (GAMMA * Math.max(...QNextValues));
 
-    Q[state][actionIndex] = QValue;
+    // Q[state][actionIndex] = QValue;
+    Q[state][actionIndex] = Math.ceil(QValue);
 
-    console.log('Q-Learning: \n', {
+    // console.log('Q-Learning: \n', {
+    //   episode, state, actionIndex, next_state, QNextValues, actionValue, QValue,
+    // });
+
+    LOG.push({
       episode, state, actionIndex, next_state, QNextValues, actionValue, QValue,
     });
 
@@ -45,6 +55,10 @@ for (let episode = 0; episode < EPISODE_LENGTH; episode += 1) {
   }
 }
 
+
 console.log('====================================');
 console.log({ Q });
 console.log('====================================');
+
+jsonfile.writeFileSync('./QLearning/JSON/Q-LEARNING.json', Q);
+

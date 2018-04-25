@@ -1,7 +1,7 @@
-const VALUE_MOVEMENT = require('./valueMovement.json');
+const VALUE_MOVEMENT = require('./JSON/valueMovement.json');
 const jsonfile = require('jsonfile');
 
-const file = './trial/possibleMovement.json';
+const file = './QLearning/JSON/possibleMovement.json';
 
 const possibleMovement = [];
 
