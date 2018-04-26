@@ -38,8 +38,8 @@ for (let episode = 0; episode < EPISODE_LENGTH; episode += 1) {
 
     const QValue = actionValue + (GAMMA * Math.max(...QNextValues));
 
-    // Q[state][actionIndex] = QValue;
-    Q[state][actionIndex] = Math.ceil(QValue);
+    Q[state][actionIndex] = QValue;
+    // Q[state][actionIndex] = Math.ceil(QValue);
 
     // console.log('Q-Learning: \n', {
     //   episode, state, actionIndex, next_state, QNextValues, actionValue, QValue,
@@ -55,9 +55,9 @@ for (let episode = 0; episode < EPISODE_LENGTH; episode += 1) {
 }
 
 
-console.log('====================================');
-console.log({ Q });
-console.log('====================================');
+// console.log('====================================');
+// console.log({ Q });
+// console.log('====================================');
 
 jsonfile.writeFileSync('./QLearning/JSON/Q-LEARNING.json', Q);
 

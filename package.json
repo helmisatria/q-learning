@@ -18,6 +18,6 @@
     "start":
       "STATUS=TEST node QLearning/conditionMovement.js && STATUS=TEST node QLearning/valueMovement.js && STATUS=TEST node QLearning/possibleMovement.js && STATUS=TEST node QLearning/q-learning.js && STATUS=TEST node QLearning/highestQValue.js",
     "trial":
-      "STATUS=TRIAL node QLearning/conditionMovement.js && STATUS=TRIAL node QLearning/valueMovement.js && STATUS=TRIAL node QLearning/possibleMovement.js && STATUS=TRIAL node QLearning/q-learning.js && STATUS=TRAIL node QLearning/highestQValue.js"
+      "STATUS=TRIAL node QLearning/conditionMovement.js && STATUS=TRIAL node QLearning/valueMovement.js && STATUS=TRIAL node QLearning/possibleMovement.js && STATUS=TRIAL node QLearning/q-learning.js && STATUS=TRIAL node QLearning/highestQValue.js"
   }
 }

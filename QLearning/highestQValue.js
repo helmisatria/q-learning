@@ -15,10 +15,10 @@ let state = INITIAL_STATE;
 const log = [];
 
 let result = 0;
-
 let count = 0;
 const END = 1000;
-while (state !== FINAL_STATE && count !== END) {
+
+while (state !== FINAL_STATE && count < END) {
   // console.log(Q[state]);
   log.push(state);
 
@@ -46,10 +46,9 @@ while (state !== FINAL_STATE && count !== END) {
     maxIndex = Q[state].indexOf(maxValue);
   }
 
-
-  console.log({
-    state, maxValue, maxIndex, q: Q[state],
-  });
+  // console.log({
+  //   state, maxValue, maxIndex, q: Q[state],
+  // });
 
   const { next_state } = nextState(REWARDS, state, maxIndex);
 

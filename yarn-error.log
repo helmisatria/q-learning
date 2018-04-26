@@ -1,5 +1,5 @@
 Arguments: 
-  /home/helmisatria/.nvm/versions/node/v9.11.1/bin/node /home/helmisatria/.nvm/versions/node/v9.11.1/bin/yarn start
+  /home/helmisatria/.nvm/versions/node/v9.11.1/bin/node /home/helmisatria/.nvm/versions/node/v9.11.1/bin/yarn trial
 
 PATH: 
   /home/helmisatria/.nvm/versions/node/v9.11.1/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/sbin:/usr/sbin
@@ -34,7 +34,7 @@ npm manifest:
       "start":
         "STATUS=TEST node QLearning/conditionMovement.js && STATUS=TEST node QLearning/valueMovement.js && STATUS=TEST node QLearning/possibleMovement.js && STATUS=TEST node QLearning/q-learning.js && STATUS=TEST node QLearning/highestQValue.js",
       "trial":
-        "STATUS=TRIAL node QLearning/conditionMovement.js && STATUS=TRIAL node QLearning/valueMovement.js && STATUS=TRIAL node QLearning/possibleMovement.js && STATUS=TRIAL node QLearning/q-learning.js && STATUS=TRAIL node QLearning/highestQValue.js"
+        "STATUS=TRIAL node QLearning/conditionMovement.js && STATUS=TRIAL node QLearning/valueMovement.js && STATUS=TRIAL node QLearning/possibleMovement.js && STATUS=TRIAL node QLearning/q-learning.js && STATUS=TRIAL node QLearning/highestQValue.js"
     }
   }
 
@@ -48,7 +48,7 @@ Trace:
   Error: Command failed.
   Exit code: 1
   Command: sh
-  Arguments: -c STATUS=TEST node QLearning/conditionMovement.js && STATUS=TEST node QLearning/valueMovement.js && STATUS=TEST node QLearning/possibleMovement.js && STATUS=TEST node QLearning/q-learning.js && STATUS=TEST node QLearning/highestQValue.js
+  Arguments: -c STATUS=TRIAL node QLearning/conditionMovement.js && STATUS=TRIAL node QLearning/valueMovement.js && STATUS=TRIAL node QLearning/possibleMovement.js && STATUS=TRIAL node QLearning/q-learning.js && STATUS=TRIAL node QLearning/highestQValue.js
   Directory: /home/helmisatria/Documents/TUGAS/Machine Learning/q-learning
   Output:
   

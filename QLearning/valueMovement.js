@@ -2,7 +2,7 @@ const jsonfile = require('jsonfile');
 
 let REWARDS;
 if (process.env.STATUS === 'TEST') REWARDS = require('./REWARDS/REWARD_TEST.json');
-if (process.env.STATUS === 'TRIAL') REWARDS = require('./JSON/REWARD_TRIAL.json');
+if (process.env.STATUS === 'TRIAL') REWARDS = require('./REWARDS/REWARD_TRIAL.json');
 
 const file = './QLearning/JSON/conditionMovement.json';
 const fileWrite = './QLearning/JSON/valueMovement.json';
@@ -23,11 +23,11 @@ condition.forEach((reward) => {
     I += 1;
   }
 
-  console.log({
-    REWARDS: REWARDS[I],
-    I,
-    count,
-  });
+  // console.log({
+  //   REWARDS: REWARDS[I],
+  //   I,
+  //   count,
+  // });
 
   let UP = null;
   let DOWN = null;
