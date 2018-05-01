@@ -15,7 +15,7 @@ let state = INITIAL_STATE;
 
 const log = [];
 
-let POINTS = 0;
+let TOTALREWARDS = 0;
 let count = 0;
 const END = 1000;
 
@@ -27,8 +27,8 @@ while (state !== FINAL_STATE && count < END) {
 
   const maxValue = Math.max(...movementValues);
 
-  // POINTS += maxValue;
-  // POINTS += Math.max(...R[state].filter(x => x));
+  // TOTALREWARDS += maxValue;
+  // TOTALREWARDS += Math.max(...R[state].filter(x => x));
 
   // IF value Q Action ada yang sama dalam 1 state
   let maxIndex;
@@ -71,9 +71,9 @@ for (let i = 0; i < log.length; i++) {
     col = colRow[1];
   }
 
-  POINTS += R[row][col];
+  TOTALREWARDS += R[row][col];
 }
 
 console.log('====================================');
-console.log({ log, steps: log.length - 1, POINTS });
+console.log({ log, steps: log.length - 1, TOTALREWARDS });
 console.log('====================================');
