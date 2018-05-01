@@ -1,4 +1,5 @@
 const Q = require('./JSON/Q-LEARNING.json');
+const R = require('./REWARDS/REWARD_TEST.json');
 const nextState = require('../utils/nextState');
 const randomBetween = require('../utils/randomBetween');
 
@@ -14,7 +15,7 @@ let state = INITIAL_STATE;
 
 const log = [];
 
-let result = 0;
+let POINTS = 0;
 let count = 0;
 const END = 1000;
 
@@ -26,8 +27,8 @@ while (state !== FINAL_STATE && count < END) {
 
   const maxValue = Math.max(...movementValues);
 
-
-  result += maxValue;
+  // POINTS += maxValue;
+  // POINTS += Math.max(...R[state].filter(x => x));
 
   // IF value Q Action ada yang sama dalam 1 state
   let maxIndex;
@@ -57,7 +58,22 @@ while (state !== FINAL_STATE && count < END) {
 }
 log.push(state);
 
+for (let i = 0; i < log.length; i++) {
+  const colRow = log[i].toString().split('');
+
+  let row;
+  let col;
+  if (colRow.length === 1) {
+    row = 0;
+    col = colRow[0];
+  } else {
+    row = colRow[0];
+    col = colRow[1];
+  }
+
+  POINTS += R[row][col];
+}
 
 console.log('====================================');
-console.log({ log, result, count: log.length });
+console.log({ log, steps: log.length - 1, POINTS });
 console.log('====================================');
